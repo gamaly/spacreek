@@ -1,0 +1,12 @@
+name: SpaCreek2
+title: SpaCreek2
+username:
+account: gamaly
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1012420
+bundleId: 2203032
+url: https://gamaly.shinyapps.io/SpaCreek2/
+when: 1562340462.82296
+asMultiple: FALSE
+asStatic: FALSE
