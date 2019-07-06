@@ -34,54 +34,54 @@ shinyUI(dashboardPage(
                          #menuItem("About", tabName = "About", icon = icon("info-circle"))
                      )),
     dashboardBody(
-        tags$head(tags$style(HTML('
-                                /* logo */
-                                .skin-blue .main-header .logo {
-                                background-color: #3B769B;
-                                }
-
-                                /* logo when hovered */
-                                .skin-blue .main-header .logo:hover {
-                                color: #F9FAF5;
-
-                                }
-
-                                /* navbar (rest of the header) */
-                                .skin-blue .main-header .navbar {
-                                background-color: #3B769B;
-                                }
-
-                                /* main sidebar */
-                                .skin-blue .main-sidebar {
-                                background-color: #3B769B;
-                                }
-
-                                /* active selected tab in the sidebarmenu */
-                                .skin-blue .main-sidebar .sidebar .sidebar-menu .active a{
-                                color: #D1BA86;
-                                }
-
-                                /* other links in the sidebarmenu */
-                                .skin-blue .main-sidebar .sidebar .sidebar-menu a{
-                                background-color: #3B769B;
-                                color: #F9FAF5;
-                                }
-
-                                /* other links in the sidebarmenu when hovered */
-                                .skin-blue .main-sidebar .sidebar .sidebar-menu a:hover{
-                                color: #D1BA86;
-                                }
-                                /* toggle button when hovered  */
-                                .skin-blue .main-header .navbar .sidebar-toggle:hover{
-                                color: #F9FAF5;
-                                }
-
-                                /* body */
-                                .content-wrapper, .right-side {
-                                background-color: #ddd3bb;
-                                }
-
-                                '))),
+        # tags$head(tags$style(HTML('
+        #                         /* logo */
+        #                         .skin-blue .main-header .logo {
+        #                         background-color: #3B769B;
+        #                         }
+        # 
+        #                         /* logo when hovered */
+        #                         .skin-blue .main-header .logo:hover {
+        #                         color: #F9FAF5;
+        # 
+        #                         }
+        # 
+        #                         /* navbar (rest of the header) */
+        #                         .skin-blue .main-header .navbar {
+        #                         background-color: #3B769B;
+        #                         }
+        # 
+        #                         /* main sidebar */
+        #                         .skin-blue .main-sidebar {
+        #                         background-color: #3B769B;
+        #                         }
+        # 
+        #                         /* active selected tab in the sidebarmenu */
+        #                         .skin-blue .main-sidebar .sidebar .sidebar-menu .active a{
+        #                         color: #D1BA86;
+        #                         }
+        # 
+        #                         /* other links in the sidebarmenu */
+        #                         .skin-blue .main-sidebar .sidebar .sidebar-menu a{
+        #                         background-color: #3B769B;
+        #                         color: #F9FAF5;
+        #                         }
+        # 
+        #                         /* other links in the sidebarmenu when hovered */
+        #                         .skin-blue .main-sidebar .sidebar .sidebar-menu a:hover{
+        #                         color: #D1BA86;
+        #                         }
+        #                         /* toggle button when hovered  */
+        #                         .skin-blue .main-header .navbar .sidebar-toggle:hover{
+        #                         color: #F9FAF5;
+        #                         }
+        # 
+        #                         /* body */
+        #                         .content-wrapper, .right-side {
+        #                         background-color: #ddd3bb;
+        #                         }
+        # 
+        #                         '))),
         tabItems(
             # First tab content
             tabItem(
