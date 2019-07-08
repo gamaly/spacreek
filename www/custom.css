@@ -1,0 +1,62 @@
+    /* logo */
+    .skin-blue .main-header .logo {
+    background-color: #3B769B;
+    }
+  
+    /* logo when hovered */
+    .skin-blue .main-header .logo:hover {
+    color: #F9FAF5;
+  
+    }
+  
+    /* navbar (rest of the header) */
+    .skin-blue .main-header .navbar {
+    background-color: #3B769B;
+    }
+  
+    /* main sidebar */
+    .skin-blue .main-sidebar {
+    background-color: #303030;
+    }
+  
+    /* active selected tab in the sidebarmenu */
+    .skin-blue .main-sidebar .sidebar .sidebar-menu .active a{
+    color: #F5F5F5;
+    }
+  
+    /* other links in the sidebarmenu */
+    .skin-blue .main-sidebar .sidebar .sidebar-menu a{
+    background-color: #303030;
+    color: #C0C0C0;
+    }
+  
+    /* other links in the sidebarmenu when hovered */
+    .skin-blue .main-sidebar .sidebar .sidebar-menu a:hover{
+    background-color: #808080;
+    color: #F5F5F5;
+    }
+    /* toggle button when hovered  */
+    .skin-blue .main-header .navbar .sidebar-toggle:hover{
+    color: #F9FAF5;
+    }
+  
+    /* body */
+    .content-wrapper, .right-side {
+    background-color: #F9FAF5
+    }
+    
+    /* primary color */
+    .skin-blue .bg-primary {
+    background-color: #f59e42;
+    color: #f59e42;
+      
+    }
+    .box.box-solid.box-primary>.box-header{
+      background-color: #3B769B;
+    color: #F9FAF5;
+    border-bottom-color:#3B769B;
+    border-left-color:#3B769B;
+    border-right-color:#3B769B;
+    border-top-color:#3B769B;
+    }
+

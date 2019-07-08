@@ -1,24 +1,32 @@
+#### This is the SERVER.R FILE, which defines all of the back end logic #####
 
 
+library(shiny)
+library(leaflet)
+library(dplyr)
+library(DT)
+library(shinydashboard)
+library(plotly)
+library(lubridate)
+library(leaflet.extras)
+library(ggplot2)
+
+#Pull All Data from googledocs, and break it into smaller tables for use in the app.
 SpaCreekData <- read.csv("https://docs.google.com/spreadsheets/d/1CWJqvI_0efGqMNV3spKc1rWQhlLQZljGfKcHKxoVkc4/gviz/tq?tqx=out:csv&sheet=2019_ALL_DATA")
-SpaCreekData$Date <- as.Date(parse_date_time(SpaCreekData$Date, "mdy"))
+SpaCreekData$Date <- parse_date_time(SpaCreekData$Date, "mdy")
 SpaCreekLatest <-  SpaCreekData %>% filter(Date==max(Date))
 SpaCreekLatest$WaterHealth <- ifelse(SpaCreekLatest$Ent_cfu_.100ml > 104, "Unhealthy", "Healthy") %>% as.factor()
 SpaCreekLatest$WaterHealth[is.na(SpaCreekLatest$Ent_cfu_.100ml)] <- "Not Yet Reported"
 SpaCreekLatest <- SpaCreekLatest[SpaCreekLatest$Layer == 'S',]
 SpaCreekHistoric <- SpaCreekData[SpaCreekData$Layer == 'S',]
-
 HealthTable <- table(SpaCreekLatest$WaterHealth)
-
-
-
 DateReported <- as.character(SpaCreekLatest$Date[1:1])
 
-tcu_map <- "https://api.mapbox.com/styles/v1/gamaly/cjmhaei90a3xh2sp6lfqftcqg/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2FtYWx5IiwiYSI6ImNpZmswdTM3bGN2eXFzNG03OTd6YWZhNmEifQ.srtQMx2-zlTgvAT90pAOTw"
 
+#Create variables for Mapbox integration
+tcu_map <- "https://api.mapbox.com/styles/v1/gamaly/cjmhaei90a3xh2sp6lfqftcqg/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2FtYWx5IiwiYSI6ImNpZmswdTM3bGN2eXFzNG03OTd6YWZhNmEifQ.srtQMx2-zlTgvAT90pAOTw"
 map_attr <- "© <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a>"
 
-library(shiny)
 
 shinyServer(function(input, output) {
     
@@ -33,7 +41,7 @@ shinyServer(function(input, output) {
     output$dateBox <- renderValueBox({
         valueBox(
             paste0(DateReported), "Last Date Reported", icon = icon("calendar"),
-            color = "light-blue")
+            color = "aqua")
     })
     
     output$unhealthyBox <- renderValueBox({
